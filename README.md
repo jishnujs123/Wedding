@@ -1,22 +1,18 @@
-# Jishnu & Anupama Wedding Website
+# Jishnu & Anupama Wedding Site
 
-## Setup
+## Quick Start
 ```bash
 npm install
-```
-
-## Run
-```bash
 npm run dev
 ```
 
-Open http://localhost:5173
+## Deploy
+Pushes to main auto-deploy to GitHub Pages.
 
-## Build
-```bash
-npm run build
-```
+## Branches
+- main: Production
+- dev: Development
+- feature/wedding-updates: Features
 
-Dist in `/dist`.
+Updated $(date) for Pages rebuild.
 
-Tech: React + Vite + Tailwind CSS
