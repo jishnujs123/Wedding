@@ -11,6 +11,7 @@ export default {
         charcoal: '#1a1a1a',
         darknavy: '#1A1A2E',
         gold: '#D4AF37',
+        textgold: '#D4AF37',
         silver: '#C0C0C0',
         whiteglow: '#f8f8f8',
         rose: '#F8E8EE',
