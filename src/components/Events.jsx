@@ -5,7 +5,7 @@ const Events = () => {
       date: 'Sunday, 5th July 2026',
       time: '9:15 AM - 9:45 AM',
       venue: 'Thrikkakara Vamana Moorthy Temple, Thrikkakara, Edapally, Kochi',
-      map: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyD...&q=https://maps.app.goo.gl/sb8uh25T5c4ptXCH6',
+      map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.559947772974!2d76.3087!3d10.033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTrCsDAxJzU5LjIiTiA3NMKwMTgnMzEuMiJF!5e0!3m2!1sen!2sin!4v1690000000000',
     },
     {
       title: 'Church Solemnisation',
