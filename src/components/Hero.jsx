@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen bg-rose floral-pattern bg-cover bg-center flex items-center justify-center text-center text-navy relative overflow-hidden animate-wedding-float" style={{backgroundImage: `url('/images/hero-bg.jpg.webp')`}}>
+    <section id="hero" className="min-h-screen bg-rose floral-pattern bg-cover bg-center flex items-center justify-center text-center text-navy relative overflow-hidden animate-wedding-float" style={{backgroundImage: `url('./images/hero-bg.jpg.webp')`}}>
       <div className="absolute inset-0 bg-gradient-to-b from-rose/20 via-blush/10 to-lavender/20" />
       <div className="relative z-10 max-w-4xl mx-auto px-4">
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif mb-8 bg-clip-text text-transparent bg-gradient-to-r from-gold via-rose to-blush animate-wedding-float">
@@ -31,3 +31,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

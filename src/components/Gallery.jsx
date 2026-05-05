@@ -5,9 +5,9 @@ const Gallery = () => {
   const [carouselImage, setCarouselImage] = useState(0);
   
   const images = [
-    { src: '/images/gallery-01.jpg.webp', alt: 'Pre-wedding moment 1' },
-    { src: '/images/gallery-02.jpg.webp', alt: 'Pre-wedding moment 2' },
-    { src: '/images/gallery-03.jpg.webp', alt: 'Pre-wedding moment 3' },
+    { src: './images/gallery-01.jpg.webp', alt: 'Pre-wedding moment 1' },
+    { src: './images/gallery-02.jpg.webp', alt: 'Pre-wedding moment 2' },
+    { src: './images/gallery-03.jpg.webp', alt: 'Pre-wedding moment 3' },
     { src: '/images/gallery-04.jpg.webp', alt: 'Pre-wedding moment 4' },
     { src: '/images/gallery-05.jpg.webp', alt: 'Pre-wedding moment 5' },
     { src: '/images/gallery-06.jpg.webp', alt: 'Pre-wedding moment 6' },

@@ -9,7 +9,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-up">
             <img 
-              src="/images/groom.webp" 
+src="./images/groom.webp" 
               alt="Jishnu" 
               className="w-full h-80 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
               loading="lazy"
@@ -25,7 +25,7 @@ const About = () => {
               <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
             </div>
             <img 
-              src="/images/bride.webp" 
+src="./images/bride.webp" 
               alt="Anupama" 
               className="w-full h-80 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
               loading="lazy"
