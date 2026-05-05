@@ -7,12 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        ivory: '#FFF8F0',
+        black: '#0a0a0a',
+        charcoal: '#1a1a1a',
+        darknavy: '#1A1A2E',
         gold: '#D4AF37',
-        blush: '#F9E4E4',
+        silver: '#C0C0C0',
+        whiteglow: '#f8f8f8',
         rose: '#F8E8EE',
-        sage: '#E8F5E8',
-        lavender: '#F3E8FF',
         floral: {
           50: '#FFF8F0',
           500: '#D4AF37',

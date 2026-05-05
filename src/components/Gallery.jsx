@@ -8,12 +8,12 @@ const Gallery = () => {
     { src: './images/gallery-01.jpg.webp', alt: 'Pre-wedding moment 1' },
     { src: './images/gallery-02.jpg.webp', alt: 'Pre-wedding moment 2' },
     { src: './images/gallery-03.jpg.webp', alt: 'Pre-wedding moment 3' },
-    { src: '/images/gallery-04.jpg.webp', alt: 'Pre-wedding moment 4' },
-    { src: '/images/gallery-05.jpg.webp', alt: 'Pre-wedding moment 5' },
-    { src: '/images/gallery-06.jpg.webp', alt: 'Pre-wedding moment 6' },
-    { src: '/images/gallery-07.jpg.webp', alt: 'Pre-wedding moment 7' },
-    { src: '/images/gallery-08.jpg.webp', alt: 'Pre-wedding moment 8' },
-    { src: '/images/gallery-09.jpg.webp', alt: 'Pre-wedding moment 9' },
+    { src: './images/gallery-04.jpg.webp', alt: 'Pre-wedding moment 4' },
+    { src: './images/gallery-05.jpg.webp', alt: 'Pre-wedding moment 5' },
+    { src: './images/gallery-06.jpg.webp', alt: 'Pre-wedding moment 6' },
+    { src: './images/gallery-07.jpg.webp', alt: 'Pre-wedding moment 7' },
+    { src: './images/gallery-08.jpg.webp', alt: 'Pre-wedding moment 8' },
+    { src: './images/gallery-09.jpg.webp', alt: 'Pre-wedding moment 9' },
   ];
 
   const nextImage = () => setCarouselImage((carouselImage + 1) % images.length);

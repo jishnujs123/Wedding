@@ -1,7 +1,7 @@
 const Timeline = () => {
   const timelineItems = [
     {
-      time: '9:30 AM',
+      time: '9:15 AM',
       title: 'Muhurtham',
       date: '5th July 2026',
       description: 'Thrikkakara Vamana Moorthy Temple',
@@ -56,3 +56,4 @@ const Timeline = () => {
 };
 
 export default Timeline;
+
