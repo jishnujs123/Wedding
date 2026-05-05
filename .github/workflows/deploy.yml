@@ -18,11 +18,23 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm install
+      - uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.npm
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
       - run: npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
 
