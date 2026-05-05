@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 // GitHub Pages root-relative paths
-  base: '/',
+base: '/Wedding/',
 })
