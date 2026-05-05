@@ -24,33 +24,17 @@ function App() {
         seconds: Math.floor((distance % (1000 * 60)) / 1000)
       };
 
-      // Only update if changed to reduce re-renders
       if (JSON.stringify(newCountdown) !== JSON.stringify(countdown)) {
         setCountdown(newCountdown);
       }
     };
 
-    updateCountdown(); // Initial
+    updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
-  }, [countdown]); // Safe dep - only re-runs if countdown changes significantly
-
-  const scrollToSection = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-slide-up');
-        }
-      });
-    });
-    document.querySelectorAll('.animate-slide-up').forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  }, [countdown]);
 
   useEffect(() => {
-    // Scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -63,7 +47,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen floral-pattern text-whiteglow font-sans">
+    <div className="min-h-screen bg-ivory text-navy font-sans">
       <Navbar />
       <Hero />
       <About />
@@ -73,8 +57,8 @@ function App() {
       <RSVP />
       <Footer />
       
-      {/* Countdown Overlay in Hero - optional enhancement */}
-      <div className="fixed top-24 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md px-8 py-4 rounded-3xl shadow-2xl z-40 hidden md:block">
+      {/* Countdown Overlay */}
+      <div className="fixed top-24 left-1/2 transform -translate-x-1/2 bg-blush/90 backdrop-blur-md px-8 py-4 rounded-3xl shadow-2xl z-40 hidden md:block border border-gold/20">
         <div className="flex space-x-4 text-sm font-medium">
           <div className="text-center">
             <div className="text-2xl font-serif text-gold">{countdown.days || 0}d</div>
@@ -99,3 +83,4 @@ function App() {
 }
 
 export default App;
+

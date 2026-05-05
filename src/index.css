@@ -1,43 +1,26 @@
 @tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
-
-
 
 :root {
   --wedding-gold: linear-gradient(135deg, #FAD5A5 0%, #D4AF37 50%, #F4C430 100%);
-  --rose-gradient: linear-gradient(135deg, #F9E4E4, #F8E8EE);
-  --sage-gradient: linear-gradient(135deg, #E8F5E8, #D4EDDA);
-  --floral-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.25);
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-  color: #f8f8f8; /* whiteglow primary text */
-  overscroll-behavior: none;
+  font-family: 'Inter', sans-serif;
+  color: #1A1A2E;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', 'Dancing Script', serif;
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-
-.animate-wedding-float {
-  animation: weddingFloat 6s ease-in-out infinite;
-}
-
-@keyframes weddingFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(2deg); }
+  font-family: 'Playfair Display', serif;
 }
 
 .floral-pattern {
   background-image: 
-    radial-gradient(circle at 20% 80%, rgba(244, 196, 48, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(249, 228, 228, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(232, 245, 232, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(244, 196, 48, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(250, 218, 221, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(250, 242, 212, 0.05) 0%, transparent 50%);
 }
+

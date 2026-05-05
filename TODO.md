@@ -1,14 +1,12 @@
-# Wedding Site Refactor Progress
-Date: $(date)
+# Wedding Site - Ivory/Blush Theme ✓
 
-**Approved Plan**: Clean code + new wedding theme (pastel/gold/floral), keep content.
+## Completed:
+- [x] Fixed Tailwind @import order (CSS warning gone)
+- [x] New tailwind.config.js ivory/blush/gold colors
+- [x] App.jsx bg-ivory text-navy + blush countdown
+- [ ] Navbar ivory/blush version
+- [ ] Hero/sections light theme classes
+- [ ] Build/deploy
 
-**Step 1**: Create TODO.md ✅
-**Step 2**: Remove console.logs (RSVP.jsx)
-**Step 3**: Fix useEffect deps (App.jsx, Navbar.jsx)
-**Step 4**: New theme (tailwind.config.js, index.css, components)
-**Step 5**: Optimize imports/structure
-**Step 6**: Test build/deploy
-**Step 7**: Complete ✅
-
+**Current: Theme live locally** - Check http://localhost:5173/Wedding/
 
