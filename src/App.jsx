@@ -63,7 +63,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen floral-pattern text-navy font-sans">
+    <div className="min-h-screen floral-pattern text-whiteglow font-sans">
       <Navbar />
       <Hero />
       <About />
