@@ -25,10 +25,10 @@ const Gallery = () => {
 
   return (
     <>
-      <section id="gallery" className="py-24 bg-gradient-to-b from-navy to-navy/50">
+  <section id="gallery" className="py-24 bg-gradient-to-b from-lavender/30 via-rose/20 to-sage/20 floral-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-5xl md:text-7xl font-serif mb-6 bg-gradient-to-r from-ivory to-gold bg-clip-text text-transparent">Photo Gallery</h2>
+          <div className="text-center mb-16 animate-wedding-float">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-6 bg-gradient-to-r from-gold via-rose to-lavender bg-clip-text text-transparent drop-shadow-2xl">Our Memories</h2>
             <p className="text-xl md:text-2xl text-ivory/80 max-w-2xl mx-auto">Cherished moments from our journey together</p>
           </div>
 

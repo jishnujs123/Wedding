@@ -24,10 +24,10 @@ const Timeline = () => {
   ];
 
   return (
-    <section id="timeline" className="py-32 bg-gradient-to-b from-blush to-ivory">
+    <section id="timeline" className="py-32 bg-gradient-to-b from-lavender/30 to-rose floral-pattern">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 animate-slide-up">
-          <h2 className="text-5xl md:text-6xl font-serif text-navy mb-6">Wedding Timeline</h2>
+        <div className="text-center mb-20 animate-wedding-float">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 bg-gradient-to-r from-rose via-gold to-lavender bg-clip-text text-transparent drop-shadow-lg">Wedding Journey</h2>
           <p className="text-xl text-navy/80 max-w-2xl mx-auto">Our special moments</p>
         </div>
         <div className="relative">

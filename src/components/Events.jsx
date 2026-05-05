@@ -24,10 +24,10 @@ const Events = () => {
   ];
 
   return (
-    <section id="events" className="py-32 bg-ivory">
+    <section id="events" className="py-32 bg-sage/30 floral-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 animate-slide-up">
-          <h2 className="text-5xl md:text-6xl font-serif text-navy mb-6">Wedding Events</h2>
+        <div className="text-center mb-20 animate-wedding-float">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 bg-gradient-to-r from-gold via-sage to-blush bg-clip-text text-transparent drop-shadow-lg">Wedding Events</h2>
           <p className="text-xl text-navy/80 max-w-2xl mx-auto">Join us for these special moments</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">

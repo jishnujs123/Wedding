@@ -9,7 +9,14 @@ export default {
       colors: {
         ivory: '#FFF8F0',
         gold: '#D4AF37',
-        blush: '#F8D7DA',
+        blush: '#F9E4E4',
+        rose: '#F8E8EE',
+        sage: '#E8F5E8',
+        lavender: '#F3E8FF',
+        floral: {
+          50: '#FFF8F0',
+          500: '#D4AF37',
+        },
         navy: '#1A1A2E',
       },
       fontFamily: {

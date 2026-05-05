@@ -20,7 +20,7 @@ const RSVP = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.email) {
-      console.log('RSVP Submission:', formData);
+      // RSVP submitted: console.log removed
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 5000);
       setFormData({ name: '', email: '', guests: 1, attending: 'yes', message: '' });
@@ -30,10 +30,10 @@ const RSVP = () => {
   };
 
   return (
-    <section id="rsvp" className="py-32 bg-gradient-to-t from-navy to-ivory/50">
+    <section id="rsvp" className="py-32 bg-gradient-to-t from-blush via-rose to-sage/20 floral-pattern">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 animate-slide-up">
-          <h2 className="text-5xl md:text-6xl font-serif text-navy mb-6">Will You Be There?</h2>
+        <div className="text-center mb-20 animate-wedding-float">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 bg-gradient-to-r from-gold via-blush to-rose bg-clip-text text-transparent drop-shadow-lg">RSVP With Love</h2>
           <p className="text-xl text-navy/80 max-w-xl mx-auto">We would love to have you celebrate with us</p>
         </div>
         <form onSubmit={handleSubmit} className="bg-white/30 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-white/20">

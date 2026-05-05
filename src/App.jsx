@@ -33,21 +33,20 @@ function App() {
     updateCountdown(); // Initial
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
-  }, [countdown]);
+  }, [countdown]); // Safe dep - only re-runs if countdown changes significantly
 
+  const scrollToSection = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  
   useEffect(() => {
-    const handleSmoothScroll = (e) => {
-      if (e.target.matches('[href^=\"#\"]') || e.target.onclick?.toString().includes('scroll')) {
-        e.preventDefault();
-        const href = e.target.getAttribute('href');
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-slide-up');
         }
-      }
-    };
-    document.addEventListener('click', handleSmoothScroll);
-    return () => document.removeEventListener('click', handleSmoothScroll);
+      });
+    });
+    document.querySelectorAll('.animate-slide-up').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -64,7 +63,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-ivory text-navy font-sans">
+    <div className="min-h-screen floral-pattern text-navy font-sans">
       <Navbar />
       <Hero />
       <About />

@@ -1,11 +1,14 @@
-# Wedding Site Final Setup Progress
+# Wedding Site Refactor Progress
+Date: $(date)
 
-## Completed:
-- [x] Updated vite.config.js (base: '/Wedding/')
-- [x] Created .github/workflows/deploy.yml
-- [x] Git commit & push to trigger deploy
+**Approved Plan**: Clean code + new wedding theme (pastel/gold/floral), keep content.
 
-## Next:
-- Monitor GitHub Actions for build/deploy
-- Test live site at https://{username}.github.io/Wedding/
+**Step 1**: Create TODO.md ✅
+**Step 2**: Remove console.logs (RSVP.jsx)
+**Step 3**: Fix useEffect deps (App.jsx, Navbar.jsx)
+**Step 4**: New theme (tailwind.config.js, index.css, components)
+**Step 5**: Optimize imports/structure
+**Step 6**: Test build/deploy
+**Step 7**: Complete ✅
+
 
