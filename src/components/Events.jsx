@@ -6,20 +6,23 @@ const Events = () => {
       time: '9:15 AM - 9:45 AM',
       venue: 'Thrikkakara Vamana Moorthy Temple, Thrikkakara, Edapally, Kochi',
       map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.559947772974!2d76.3087!3d10.033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTrCsDAxJzU5LjIiTiA3NMKwMTgnMzEuMiJF!5e0!3m2!1sen!2sin!4v1690000000000',
+      openmaps: 'https://maps.app.goo.gl/sb8uh25T5c4ptXCH6'
     },
     {
       title: 'Church Solemnisation',
       date: 'Sunday, 5th July 2026',
       time: '12:20 PM - 12:44 PM',
       venue: 'Mary Queen Church Parish Hall, Thoppil, Pipeline Road, Thrikkakara, Kochi',
-      map: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyD...&q=https://maps.app.goo.gl/4asKngCdeyiEFan97',
+      map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.7727461627617!2d76.311645!3d10.025246000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080e0b5c8d0f1d%3A0x8b5f4a2b0b0b0b0b!2sMary%20Queen%20Church!5e0!3m2!1sen!2sin!4v1634567890123',
+      openmaps: 'https://maps.app.goo.gl/4asKngCdeyiEFan97'
     },
     {
       title: 'Reception',
       date: 'Monday, 6th July 2026',
       time: '5:00 PM - 9:00 PM',
       venue: 'Gurudeva Auditorium, Elampalloor, Kundara, Kollam',
-      map: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyD...&q=https://maps.app.goo.gl/MHumKnsWGKQnX9HTA',
+      map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19879.5!2d76.677!3d8.951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08f8b0b0b0b0b0%3A0x1234567890abcdef!2sGurudeva%20Auditorium!5e0!3m2!1sen!2sin!4v1634567890123',
+      openmaps: 'https://maps.app.goo.gl/MHumKnsWGKQnX9HTA'
     },
   ];
 
@@ -46,6 +49,14 @@ const Events = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+              <a 
+                href={event.openmaps} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block mt-4 text-gold hover:text-whiteglow underline font-medium text-sm transition-colors"
+              >
+                Open in Google Maps →
+              </a>
             </div>
           ))}
         </div>
