@@ -6,97 +6,52 @@ const RSVP = () => {
     email: '',
     guests: 1,
     attending: 'yes',
-    message: ''
+    message: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.name && formData.email) {
-      // RSVP submitted: console.log removed
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
-      setFormData({ name: '', email: '', guests: 1, attending: 'yes', message: '' });
-    } else {
-      alert('Please fill name and email');
-    }
+    if (!formData.name || !formData.email) return;
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
+    setFormData({ name: '', email: '', guests: 1, attending: 'yes', message: '' });
   };
 
   return (
-    <section id="rsvp" className="py-32 bg-gradient-to-t from-blush via-rose to-sage/20 floral-pattern">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 animate-wedding-float">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 bg-gradient-to-r from-gold via-blush to-rose bg-clip-text text-transparent drop-shadow-lg">RSVP With Love</h2>
-          <p className="text-xl text-navy/80 max-w-xl mx-auto">We would love to have you celebrate with us</p>
+    <section id="rsvp" className="py-24 md:py-28">
+      <div className="section-shell max-w-3xl">
+        <div className="text-center mb-12 animate-riseIn">
+          <h2 className="section-title">RSVP</h2>
+          <p className="section-subtitle">Your presence means everything to us. Please let us know if you can join.</p>
         </div>
-        <form onSubmit={handleSubmit} className="bg-white/30 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-white/20">
+
+        <form onSubmit={handleSubmit} className="card-surface p-6 md:p-8">
           {submitted && (
-            <div className="text-center mb-8 p-6 bg-gold/20 rounded-2xl text-gold font-medium animate-pulse">
-              Thank you! Your RSVP has been received ✨
+            <div className="mb-5 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-emerald-700">
+              Thank you. Your RSVP has been recorded.
             </div>
           )}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name *"
-              value={formData.name}
-              onChange={handleChange}
-              className="px-6 py-4 rounded-2xl border border-white/30 bg-white/50 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all duration-300 text-navy placeholder-navy/50"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email *"
-              value={formData.email}
-              onChange={handleChange}
-              className="px-6 py-4 rounded-2xl border border-white/30 bg-white/50 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all duration-300 text-navy placeholder-navy/50"
-              required
-            />
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <select
-              name="attending"
-              value={formData.attending}
-              onChange={handleChange}
-              className="px-6 py-4 rounded-2xl border border-white/30 bg-white/50 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all duration-300 text-navy"
-            >
-              <option value="yes">We will be there! 🎉</option>
-              <option value="no">Sorry, can't make it 😔</option>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <input name="name" type="text" placeholder="Full Name" value={formData.name} onChange={handleChange} required className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
+            <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
+            <select name="attending" value={formData.attending} onChange={handleChange} className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300">
+              <option value="yes">We will be there</option>
+              <option value="no">Sorry, cannot make it</option>
               <option value="maybe">Maybe</option>
             </select>
-            <input
-              type="number"
-              name="guests"
-              placeholder="Number of guests"
-              value={formData.guests}
-              onChange={handleChange}
-              min="1"
-              max="10"
-              className="px-6 py-4 rounded-2xl border border-white/30 bg-white/50 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all duration-300 text-navy placeholder-navy/50"
-            />
+            <input name="guests" type="number" min="1" max="10" value={formData.guests} onChange={handleChange} className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
           </div>
-          <textarea
-            name="message"
-            placeholder="Special message or dietary requirements (optional)"
-            value={formData.message}
-            onChange={handleChange}
-            rows="4"
-            className="w-full px-6 py-4 rounded-2xl border border-white/30 bg-white/50 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all duration-300 text-navy placeholder-navy/50 resize-none"
-          />
-          <button
-            type="submit"
-            className="w-full bg-gold text-navy py-6 px-8 rounded-3xl font-medium text-xl mt-8 hover:bg-opacity-90 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 uppercase tracking-wide"
-          >
-            Send My RSVP
+
+          <textarea name="message" rows="4" placeholder="Message or dietary requirements" value={formData.message} onChange={handleChange} className="mt-4 w-full rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
+
+          <button type="submit" className="mt-6 w-full rounded-xl bg-slate-900 text-white py-3 font-semibold hover:bg-slate-700 transition">
+            Submit RSVP
           </button>
         </form>
       </div>

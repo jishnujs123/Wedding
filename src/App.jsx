@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -6,48 +7,32 @@ import Timeline from './components/Timeline';
 import Gallery from './components/Gallery';
 import RSVP from './components/RSVP';
 import Footer from './components/Footer';
-import { useEffect, useState } from 'react';
 
 function App() {
-  const [countdown, setCountdown] = useState({});
-  
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
   useEffect(() => {
-    const updateCountdown = () => {
-      const weddingDate = new Date('2026-07-05T09:30:00').getTime();
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
+    const weddingDate = new Date('2026-07-05T09:30:00+05:30').getTime();
 
-      const newCountdown = {
+    const tick = () => {
+      const now = Date.now();
+      const distance = Math.max(weddingDate - now, 0);
+
+      setCountdown({
         days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000)
-      };
-
-      if (JSON.stringify(newCountdown) !== JSON.stringify(countdown)) {
-        setCountdown(newCountdown);
-      }
+        hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((distance / (1000 * 60)) % 60),
+        seconds: Math.floor((distance / 1000) % 60),
+      });
     };
 
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
+    tick();
+    const interval = setInterval(tick, 1000);
     return () => clearInterval(interval);
-  }, [countdown]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-slide-up');
-        }
-      });
-    });
-    document.querySelectorAll('.animate-slide-up').forEach(el => observer.observe(el));
-    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="min-h-screen bg-ivory text-navy font-sans">
+    <div className="min-h-screen text-ink font-sans">
       <Navbar />
       <Hero />
       <About />
@@ -56,25 +41,27 @@ function App() {
       <Gallery />
       <RSVP />
       <Footer />
-      
-      {/* Countdown Overlay */}
-      <div className="fixed top-24 left-1/2 transform -translate-x-1/2 bg-blush/90 backdrop-blur-md px-8 py-4 rounded-3xl shadow-2xl z-40 hidden md:block border border-gold/20">
-        <div className="flex space-x-4 text-sm font-medium">
-          <div className="text-center">
-            <div className="text-2xl font-serif text-gold">{countdown.days || 0}d</div>
-            <div>Days</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-serif text-gold">{countdown.hours || 0}h</div>
-            <div>Hours</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-serif text-gold">{countdown.minutes || 0}m</div>
-            <div>Minutes</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-serif text-gold">{countdown.seconds || 0}s</div>
-            <div>Seconds</div>
+
+      <div className="fixed top-20 left-1/2 -translate-x-1/2 z-40 hidden md:block">
+        <div className="card-surface px-5 py-3">
+          <p className="text-[11px] uppercase tracking-[0.28em] text-slate-500 mb-2 text-center">Countdown To Wedding</p>
+          <div className="flex gap-4 text-center">
+            <div>
+              <p className="text-2xl font-serif text-slate-900 leading-none">{countdown.days}</p>
+              <p className="text-xs text-slate-600">Days</p>
+            </div>
+            <div>
+              <p className="text-2xl font-serif text-slate-900 leading-none">{countdown.hours}</p>
+              <p className="text-xs text-slate-600">Hours</p>
+            </div>
+            <div>
+              <p className="text-2xl font-serif text-slate-900 leading-none">{countdown.minutes}</p>
+              <p className="text-xs text-slate-600">Minutes</p>
+            </div>
+            <div>
+              <p className="text-2xl font-serif text-slate-900 leading-none">{countdown.seconds}</p>
+              <p className="text-xs text-slate-600">Seconds</p>
+            </div>
           </div>
         </div>
       </div>
@@ -83,4 +70,3 @@ function App() {
 }
 
 export default App;
-

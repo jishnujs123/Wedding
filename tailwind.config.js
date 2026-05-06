@@ -1,46 +1,35 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        ivory: '#FFF8F0',
-        blush: '#FADADD',
-        blushdark: '#F4C7CC',
-        cream: '#FDFAF4',
-        navy: '#1A1A2E',
-        charcoal: '#2D2D44',
-        gold: '#D4AF37',
-        silver: '#C0C0C0',
+        paper: '#F7F1E8',
+        paperSoft: '#FBF8F3',
+        ink: '#1F2937',
+        muted: '#6B7280',
+        accent: '#B8894A',
+        accentDeep: '#8A6230',
       },
       fontFamily: {
-        'serif': ['Playfair Display', 'serif'],
-        'sans': ['Inter', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'serif'],
+        sans: ['Manrope', 'sans-serif'],
       },
       animation: {
-        'fade-in': 'fadeIn 1s ease-out',
-        'slide-up': 'slideUp 0.8s ease-out',
-        'wedding-float': 'weddingFloat 6s ease-in-out infinite',
+        fadeIn: 'fadeIn 0.8s ease-out',
+        riseIn: 'riseIn 0.7s ease-out',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(30px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        weddingFloat: {
-          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+        riseIn: {
+          '0%': { opacity: '0', transform: 'translateY(18px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },
   },
   plugins: [],
-}
-
+};

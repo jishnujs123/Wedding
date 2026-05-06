@@ -3,48 +3,46 @@ const Timeline = () => {
     {
       time: '9:15 AM',
       title: 'Muhurtham',
-      date: '5th July 2026',
+      date: 'July 5, 2026',
       description: 'Thrikkakara Vamana Moorthy Temple',
-      icon: '🕉️'
     },
     {
       time: '12:20 PM',
       title: 'Solemnisation',
-      date: '5th July 2026',
+      date: 'July 5, 2026',
       description: 'Mary Queen Church Parish Hall',
-      icon: '⛪'
     },
     {
       time: '5:00 PM',
       title: 'Reception',
-      date: '6th July 2026',
+      date: 'July 6, 2026',
       description: 'Gurudeva Auditorium, Kundara',
-      icon: '🎉'
-    }
+    },
   ];
 
   return (
-    <section id="timeline" className="py-32 bg-gradient-to-b from-lavender/30 to-rose floral-pattern">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 animate-wedding-float">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 bg-gradient-to-r from-rose via-gold to-lavender bg-clip-text text-transparent drop-shadow-lg">Wedding Journey</h2>
-          <p className="text-xl text-navy/80 max-w-2xl mx-auto">Our special moments</p>
+    <section id="timeline" className="py-24 md:py-28">
+      <div className="section-shell max-w-4xl">
+        <div className="text-center mb-14 animate-riseIn">
+          <h2 className="section-title">Wedding Timeline</h2>
+          <p className="section-subtitle">A simple view of our day from morning blessings to evening celebration.</p>
         </div>
-        <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gold/30" />
-          <div className="space-y-12">
+
+        <div className="relative pl-6 md:pl-0">
+          <div className="absolute left-2 md:left-1/2 top-0 bottom-0 w-px bg-amber-300" />
+          <div className="space-y-6">
             {timelineItems.map((item, index) => (
-              <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row-reverse' : ''} animate-slide-up`} style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="w-1/2">
-                  <div className="bg-white rounded-2xl p-8 shadow-xl border border-gold/20 hover:shadow-2xl transition-all duration-500">
-                    <div className="flex items-baseline justify-between mb-4">
-                      <span className="text-3xl font-serif text-gold">{item.icon}</span>
-                      <span className="text-2xl font-medium text-navy">{item.time}</span>
-                    </div>
-                    <h3 className="text-2xl font-serif text-navy mb-2">{item.title}</h3>
-                    <p className="text-lg font-medium text-gold mb-1">{item.date}</p>
-                    <p className="text-navy/80">{item.description}</p>
-                  </div>
+              <div key={item.title} className="md:grid md:grid-cols-2 md:gap-10 items-center animate-riseIn">
+                <div className={`${index % 2 === 0 ? 'md:text-right' : 'md:order-2'} mb-3 md:mb-0`}>
+                  <p className="text-sm uppercase tracking-widest text-slate-500">{item.time}</p>
+                </div>
+                <div className={`relative ${index % 2 === 0 ? '' : 'md:order-1'}`}>
+                  <span className="absolute -left-[1.65rem] md:left-[-2.8rem] top-6 w-3 h-3 rounded-full bg-accent border-2 border-white" />
+                  <article className="card-surface p-5">
+                    <h3 className="text-3xl text-slate-900">{item.title}</h3>
+                    <p className="text-accentDeep font-medium">{item.date}</p>
+                    <p className="text-slate-600 mt-1">{item.description}</p>
+                  </article>
                 </div>
               </div>
             ))}
@@ -56,4 +54,3 @@ const Timeline = () => {
 };
 
 export default Timeline;
-

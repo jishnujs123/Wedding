@@ -1,26 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 @tailwind base;
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --wedding-gold: linear-gradient(135deg, #FAD5A5 0%, #D4AF37 50%, #F4C430 100%);
+  --paper: #f7f1e8;
+  --paper-soft: #fbf8f3;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --accent: #b8894a;
+  --accent-deep: #8a6230;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: #1A1A2E;
+  color: var(--ink);
+  font-family: 'Manrope', sans-serif;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(184, 137, 74, 0.1) 0, transparent 40%),
+    radial-gradient(circle at 90% 85%, rgba(138, 98, 48, 0.08) 0, transparent 45%),
+    linear-gradient(180deg, var(--paper-soft) 0%, var(--paper) 100%);
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.01em;
 }
 
-.floral-pattern {
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(244, 196, 48, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(250, 218, 221, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(250, 242, 212, 0.05) 0%, transparent 50%);
+.section-shell {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+.section-title {
+  @apply text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-4;
+}
+
+.section-subtitle {
+  @apply text-base md:text-lg text-slate-600 max-w-2xl mx-auto;
+}
+
+.card-surface {
+  @apply bg-white/80 backdrop-blur-sm border border-amber-200/60 rounded-3xl shadow-[0_20px_60px_-30px_rgba(31,41,55,0.35)];
+}

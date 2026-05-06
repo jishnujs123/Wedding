@@ -1,40 +1,43 @@
 const About = () => {
+  const groomImage = `${import.meta.env.BASE_URL}images/groom.webp`;
+  const brideImage = `${import.meta.env.BASE_URL}images/bride.webp`;
+
   return (
-    <section id="about" className="py-32 bg-gradient-to-r from-rose via-sage to-lavender/30 floral-pattern">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 animate-wedding-float">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 bg-gradient-to-r from-navy via-gold to-rose bg-clip-text text-transparent drop-shadow-lg">Our Love Story</h2>
-          <p className="text-xl text-navy/80 max-w-2xl mx-auto">With the love and blessings of our families, we are excited to celebrate the beginning of our forever journey together.</p>
+    <section id="about" className="py-24 md:py-28">
+      <div className="section-shell">
+        <div className="text-center mb-14 animate-riseIn">
+          <h2 className="section-title">Our Story</h2>
+          <p className="section-subtitle">
+            Two families, two hearts, and one beautiful journey that begins with gratitude and joy.
+          </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-slide-up">
-            <img 
-src="./images/groom.webp" 
-              alt="Jishnu" 
-              className="w-full h-80 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <article className="card-surface p-5 md:p-6 animate-riseIn">
+            <img
+              src={groomImage}
+              alt="Jishnu"
+              className="w-full h-80 object-cover rounded-2xl"
               loading="lazy"
               decoding="async"
             />
-            <h3 className="text-3xl font-serif text-navy mt-6 text-center">Jishnu J S</h3>
-            <p className="text-center text-navy/70 mt-2">S/o Mr. Jayadas V & Mrs. Suprabha K</p>
-            <p className="text-center font-medium text-gold">Thundil Puthen Veedu, Ambipoika P.O, Kundara, Kollam</p>
-          </div>
-          <div className="space-y-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
-            <div>
-              <h3 className="text-4xl font-serif text-navy mb-4">&amp;</h3>
-              <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
-            </div>
-            <img 
-src="./images/bride.webp" 
-              alt="Anupama" 
-              className="w-full h-80 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+            <h3 className="text-4xl mt-5 text-slate-900">Jishnu J S</h3>
+            <p className="text-slate-600 mt-2">Son of Mr. Jayadas V and Mrs. Suprabha K</p>
+            <p className="text-accentDeep mt-2 font-medium">Thundil Puthen Veedu, Ambipoika P.O, Kundara, Kollam</p>
+          </article>
+
+          <article className="card-surface p-5 md:p-6 animate-riseIn">
+            <img
+              src={brideImage}
+              alt="Anupama"
+              className="w-full h-80 object-cover rounded-2xl"
               loading="lazy"
               decoding="async"
             />
-            <h3 className="text-3xl font-serif text-navy mt-6 text-center">Anupama Jayaraj</h3>
-            <p className="text-center text-navy/70 mt-2">D/o Mr. K. Jayaraj & Mrs. Shobha Jayaraj</p>
-            <p className="text-center font-medium text-gold">Arun Villa, Kangarappady, Vadacode P.O, Kochi</p>
-          </div>
+            <h3 className="text-4xl mt-5 text-slate-900">Anupama Jayaraj</h3>
+            <p className="text-slate-600 mt-2">Daughter of Mr. K. Jayaraj and Mrs. Shobha Jayaraj</p>
+            <p className="text-accentDeep mt-2 font-medium">Arun Villa, Kangarappady, Vadacode P.O, Kochi</p>
+          </article>
         </div>
       </div>
     </section>

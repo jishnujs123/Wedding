@@ -2,62 +2,63 @@ const Events = () => {
   const events = [
     {
       title: 'Temple Muhurtham',
-      date: 'Sunday, 5th July 2026',
+      date: 'Sunday, July 5, 2026',
       time: '9:15 AM - 9:45 AM',
       venue: 'Thrikkakara Vamana Moorthy Temple, Thrikkakara, Edapally, Kochi',
-      map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.559947772974!2d76.3087!3d10.033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTrCsDAxJzU5LjIiTiA3NMKwMTgnMzEuMiJF!5e0!3m2!1sen!2sin!4v1690000000000',
-      openmaps: 'https://maps.app.goo.gl/sb8uh25T5c4ptXCH6'
+      map: 'https://www.google.com/maps?q=Thrikkakara%20Vamana%20Moorthy%20Temple%2C%20Thrikkakara%2C%20Edapally%2C%20Kochi&output=embed',
+      openmaps: 'https://maps.app.goo.gl/sb8uh25T5c4ptXCH6',
     },
     {
       title: 'Church Solemnisation',
-      date: 'Sunday, 5th July 2026',
+      date: 'Sunday, July 5, 2026',
       time: '12:20 PM - 12:44 PM',
       venue: 'Mary Queen Church Parish Hall, Thoppil, Pipeline Road, Thrikkakara, Kochi',
-      map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.7727461627617!2d76.311645!3d10.025246000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080e0b5c8d0f1d%3A0x8b5f4a2b0b0b0b0b!2sMary%20Queen%20Church!5e0!3m2!1sen!2sin!4v1634567890123',
-      openmaps: 'https://maps.app.goo.gl/4asKngCdeyiEFan97'
+      map: 'https://www.google.com/maps?q=Mary%20Queen%20Church%20Parish%20Hall%2C%20Thoppil%2C%20Pipeline%20Road%2C%20Thrikkakara%2C%20Kochi&output=embed',
+      openmaps: 'https://maps.app.goo.gl/4asKngCdeyiEFan97',
     },
     {
       title: 'Reception',
-      date: 'Monday, 6th July 2026',
+      date: 'Monday, July 6, 2026',
       time: '5:00 PM - 9:00 PM',
       venue: 'Gurudeva Auditorium, Elampalloor, Kundara, Kollam',
-      map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19879.5!2d76.677!3d8.951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08f8b0b0b0b0b0%3A0x1234567890abcdef!2sGurudeva%20Auditorium!5e0!3m2!1sen!2sin!4v1634567890123',
-      openmaps: 'https://maps.app.goo.gl/MHumKnsWGKQnX9HTA'
+      map: 'https://www.google.com/maps?q=Gurudeva%20Auditorium%2C%20Elampalloor%2C%20Kundara%2C%20Kollam&output=embed',
+      openmaps: 'https://maps.app.goo.gl/MHumKnsWGKQnX9HTA',
     },
   ];
 
   return (
-    <section id="events" className="py-32 bg-charcoal/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 animate-wedding-float">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 bg-gradient-to-r from-gold via-silver to-whiteglow bg-clip-text text-transparent drop-shadow-2xl">Wedding Events</h2>
-          <p className="text-xl text-silver max-w-2xl mx-auto">Join us for these sacred moments</p>
+    <section id="events" className="py-24 md:py-28 bg-white/40">
+      <div className="section-shell">
+        <div className="text-center mb-14 animate-riseIn">
+          <h2 className="section-title">Events</h2>
+          <p className="section-subtitle">Please join us for each special ceremony.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {events.map((event, index) => (
-            <div key={index} className="bg-black/60 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gold/20 hover:border-gold/40 transition-all duration-500 hover:-translate-y-4 group animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
-              <h3 className="text-3xl font-serif text-whiteglow mb-4 group-hover:text-gold transition-colors">{event.title}</h3>
-              <p className="text-2xl font-medium text-gold mb-2">{event.date}</p>
-              <p className="text-xl mb-4 text-silver">{event.time}</p>
-              <p className="text-lg text-whiteglow/90 mb-6 leading-relaxed">{event.venue}</p>
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {events.map((event) => (
+            <article key={event.title} className="card-surface p-6 animate-riseIn">
+              <h3 className="text-3xl text-slate-900 mb-2">{event.title}</h3>
+              <p className="text-accentDeep font-semibold">{event.date}</p>
+              <p className="text-slate-700 mt-1">{event.time}</p>
+              <p className="text-slate-600 mt-3 leading-relaxed">{event.venue}</p>
               <iframe
                 src={event.map}
+                title={event.title}
                 width="100%"
                 height="200"
-                className="rounded-2xl border-0 shadow-xl"
-                allowFullScreen=""
+                className="mt-4 rounded-2xl border border-amber-100"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              <a 
-                href={event.openmaps} 
-                target="_blank" 
+              <a
+                href={event.openmaps}
+                target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-4 text-gold hover:text-whiteglow underline font-medium text-sm transition-colors"
+                className="inline-flex mt-4 text-sm text-slate-800 underline underline-offset-4 hover:text-accentDeep"
               >
-                Open in Google Maps →
+                Open in Google Maps
               </a>
-            </div>
+            </article>
           ))}
         </div>
       </div>
@@ -66,4 +67,3 @@ const Events = () => {
 };
 
 export default Events;
-

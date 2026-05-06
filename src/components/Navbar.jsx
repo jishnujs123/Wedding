@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+const sections = ['hero', 'about', 'events', 'timeline', 'gallery', 'rsvp'];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -16,50 +18,51 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-ivory/95 backdrop-blur-md shadow-xl border-b border-blush/30' 
-        : 'bg-blush/80 backdrop-blur-md'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <h1 className="text-2xl md:text-3xl font-serif text-navy drop-shadow-lg font-bold">Jishnu & Anupama</h1>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            {['hero', 'about', 'events', 'timeline', 'gallery', 'rsvp'].map((section) => (
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/85 backdrop-blur border-b border-amber-200/70' : 'bg-transparent'}`}>
+      <div className="section-shell">
+        <div className="h-16 flex items-center justify-between">
+          <button onClick={() => scrollToSection('hero')} className="text-2xl font-serif text-slate-900">
+            Jishnu and Anupama
+          </button>
+
+          <div className="hidden md:flex items-center gap-2">
+            {sections.map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className="text-navy hover:text-gold font-medium py-2 px-4 rounded-xl hover:bg-blush/50 transition-all duration-300 drop-shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="px-4 py-2 text-sm uppercase tracking-widest text-slate-700 hover:text-slate-900 hover:bg-amber-100/70 rounded-full transition"
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {section}
               </button>
             ))}
           </div>
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-xl text-navy font-bold">
-              ☰
-            </button>
+
+          <button
+            className="md:hidden text-slate-900 text-sm uppercase tracking-widest"
+            onClick={() => setIsOpen((v) => !v)}
+          >
+            Menu
+          </button>
+        </div>
+
+        {isOpen && (
+          <div className="md:hidden pb-4">
+            <div className="card-surface p-3 flex flex-col gap-2">
+              {sections.map((section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="text-left px-3 py-2 rounded-xl text-slate-700 hover:bg-amber-100"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
-      {isOpen && (
-        <div className="md:hidden bg-ivory/95 backdrop-blur-md px-4 pb-4 border-t border-blush/30">
-          {['hero', 'about', 'events', 'timeline', 'gallery', 'rsvp'].map((section) => (
-            <button
-              key={section}
-              onClick={() => scrollToSection(section)}
-              className="block w-full text-left text-navy hover:text-gold py-3 px-4 font-medium rounded-xl hover:bg-blush/50 transition-all duration-300"
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </button>
-          ))}
-        </div>
-      )}
     </nav>
   );
 };
 
 export default Navbar;
-
