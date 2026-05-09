@@ -6,6 +6,7 @@ const Events = () => {
       time: '9:15 AM - 9:45 AM',
       venue: 'Thrikkakara Vamana Moorthy Temple, Thrikkakara, Edapally, Kochi',
       map: 'https://www.google.com/maps?q=Thrikkakara%20Vamana%20Moorthy%20Temple%2C%20Thrikkakara%2C%20Edapally%2C%20Kochi&output=embed',
+      openmaps: 'https://maps.app.goo.gl/sb8uh25T5c4ptXCH6',
     },
     {
       title: 'Venue & Lunch',
@@ -13,6 +14,7 @@ const Events = () => {
       time: '12:20 PM - 12:44 PM',
       venue: 'Mary Queen Church Parish Hall, Thoppil, Pipeline Road, Thrikkakara, Kochi',
       map: 'https://www.google.com/maps?q=Mary%20Queen%20Church%20Parish%20Hall%2C%20Thoppil%2C%20Pipeline%20Road%2C%20Thrikkakara%2C%20Kochi&output=embed',
+      openmaps: 'https://maps.app.goo.gl/4asKngCdeyiEFan97',
     },
     {
       title: 'Reception',
@@ -20,6 +22,7 @@ const Events = () => {
       time: '5:00 PM - 9:00 PM',
       venue: 'Gurudeva Auditorium, Elampalloor, Kundara, Kollam',
       map: 'https://www.google.com/maps?q=Gurudeva%20Auditorium%2C%20Elampalloor%2C%20Kundara%2C%20Kollam&output=embed',
+      openmaps: 'https://maps.app.goo.gl/MHumKnsWGKQnX9HTA',
     },
   ];
 
