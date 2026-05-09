@@ -8,7 +8,7 @@ const Footer = () => {
         </p>
         <p className="mt-8 text-slate-300">
           Regards,<br />
-          Jayathi, Aswanth, Namrita and Nilana
+          Arun, Jayathi, Aswanth, Namrita & Nilana
         </p>
         <p className="mt-8 text-sm text-slate-400">Copyright 2026 Jishnu and Anupama</p>
       </div>
