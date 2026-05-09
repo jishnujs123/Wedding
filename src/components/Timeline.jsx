@@ -8,7 +8,7 @@ const Timeline = () => {
     },
     {
       time: '12:20 PM',
-      title: 'Solemnisation',
+      title: 'Venue & Lunch',
       date: 'July 5, 2026',
       description: 'Mary Queen Church Parish Hall',
     },
