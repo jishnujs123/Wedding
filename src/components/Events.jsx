@@ -1,7 +1,7 @@
 const Events = () => {
   const events = [
     {
-      title: 'Temple Muhurtham',
+      title: 'Muhurtham',
       date: 'Sunday, July 5, 2026',
       time: '9:15 AM - 9:45 AM',
       venue: 'Thrikkakara Vamana Moorthy Temple, Thrikkakara, Edapally, Kochi',
@@ -9,7 +9,7 @@ const Events = () => {
       openmaps: 'https://maps.app.goo.gl/sb8uh25T5c4ptXCH6',
     },
     {
-      title: 'Church Solemnisation',
+      title: 'Venue',
       date: 'Sunday, July 5, 2026',
       time: '12:20 PM - 12:44 PM',
       venue: 'Mary Queen Church Parish Hall, Thoppil, Pipeline Road, Thrikkakara, Kochi',
