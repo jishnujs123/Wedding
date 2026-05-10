@@ -9,7 +9,7 @@ const About = () => {
           <h2 className="section-title">Our Story</h2>
           <p className="section-subtitle">
             Two families, two hearts, and one beautiful journey that begins with gratitude and joy.
-It all started when my father sent an interest to her profile on a matrimony app called Sangam. One day, while casually checking his phone at home, I noticed an email saying that she had accepted the request.
+It all started when my father sent an interest to her matrimony profile. One day, while casually checking his phone at home, I noticed an email saying that she had accepted the request.
 Being a true Malayalee detective, I immediately searched for her on Instagram and sent her a follow request. That’s where our first conversation began.
 We started talking, getting to know each other, and slowly realized that our vibes matched really well. Soon, we felt this could turn into something serious and decided to share it with our families.
 Like most Kerala families, the first reaction was not exactly a straight “yes” — mainly because of the classic “What will people think?” situation 😂
