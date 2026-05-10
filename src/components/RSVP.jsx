@@ -9,17 +9,41 @@ const RSVP = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email) return;
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: '', email: '', guests: 1, attending: 'yes', message: '' });
+    setIsSubmitting(true);
+    setError(false);
+
+    const formBody = new FormData();
+    Object.keys(formData).forEach(key => formBody.append(key, formData[key]));
+
+    try {
+      // TODO: Replace this with your Google Apps Script Web App URL
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxIPSaYCUh_flDTbGqPWL_tQkSjExZwKbJcQAVC3KekhTxPaA2lU6mqrQ2fEwkwM59h/exec';
+      
+      await fetch(scriptURL, {
+        method: 'POST',
+        body: formBody,
+        mode: 'no-cors'
+      });
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', guests: 1, attending: 'yes', message: '' });
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch (err) {
+      console.error('Error submitting RSVP:', err);
+      setError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -36,6 +60,11 @@ const RSVP = () => {
               Thank you. Your RSVP has been recorded.
             </div>
           )}
+          {error && (
+            <div className="mb-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-red-700">
+              Something went wrong submitting your RSVP. Please try again.
+            </div>
+          )}
 
           <div className="grid md:grid-cols-2 gap-4">
             <input name="name" type="text" placeholder="Full Name" value={formData.name} onChange={handleChange} required className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
@@ -50,8 +79,8 @@ const RSVP = () => {
 
           <textarea name="message" rows="4" placeholder="Message or dietary requirements" value={formData.message} onChange={handleChange} className="mt-4 w-full rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
 
-          <button type="submit" className="mt-6 w-full rounded-xl bg-slate-900 text-white py-3 font-semibold hover:bg-slate-700 transition">
-            Submit RSVP
+          <button type="submit" disabled={isSubmitting} className="mt-6 w-full rounded-xl bg-slate-900 text-white py-3 font-semibold hover:bg-slate-700 transition disabled:opacity-70 disabled:cursor-not-allowed">
+            {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
           </button>
         </form>
       </div>
