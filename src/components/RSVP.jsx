@@ -22,16 +22,19 @@ const RSVP = () => {
     setIsSubmitting(true);
     setError(false);
 
-    const formBody = new FormData();
+    const formBody = new URLSearchParams();
     Object.keys(formData).forEach(key => formBody.append(key, formData[key]));
 
     try {
       // TODO: Replace this with your Google Apps Script Web App URL
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxIPSaYCUh_flDTbGqPWL_tQkSjExZwKbJcQAVC3KekhTxPaA2lU6mqrQ2fEwkwM59h/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwNvOY3Vy8SxXHpWBxrtgk6wAUpLd92M5qtsLyoqO0NdZ7jFipSjDFB_fRt138IR3XV/exec';
       
       await fetch(scriptURL, {
         method: 'POST',
-        body: formBody,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
         mode: 'no-cors'
       });
 
