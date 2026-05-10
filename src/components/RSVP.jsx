@@ -18,7 +18,7 @@ const RSVP = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email) return;
+    if (!formData.name) return;
     setIsSubmitting(true);
     setError(false);
 
@@ -71,7 +71,7 @@ const RSVP = () => {
 
           <div className="grid md:grid-cols-2 gap-4">
             <input name="name" type="text" placeholder="Full Name" value={formData.name} onChange={handleChange} required className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
-            <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
+            <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300" />
             <select name="attending" value={formData.attending} onChange={handleChange} className="rounded-xl border border-amber-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-300">
               <option value="yes">We will be there</option>
               <option value="no">Sorry, cannot make it</option>
